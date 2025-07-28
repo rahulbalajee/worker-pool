@@ -11,10 +11,6 @@ type VideoProcessingJob struct {
 	Video Video
 }
 
-type Processor struct {
-	Engine Encoder
-}
-
 type Video struct {
 	ID           int
 	InputFile    string
@@ -23,6 +19,10 @@ type Video struct {
 	NotifyChan   chan ProcessingMessage
 	Options      *VideoOptions
 	Encoder      Processor
+}
+
+type Processor struct {
+	Engine Encoder
 }
 
 type VideoOptions struct {
